@@ -1,0 +1,31 @@
+//define a max width for the main
+
+
+.content{
+
+    display:flex;
+    // border: 5px solid red;
+    max-width: 1200;
+    // margin-left:auto;
+    // margin-right:auto;
+    justify-content: center;
+    margin-left:10%;
+    margin-right:10%;
+
+    .article-box{
+        // border: 2px solid green;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    
+}
+
+.tag-box{
+    border: 2px solid pink;
+    width:300px;
+}
+
+
+

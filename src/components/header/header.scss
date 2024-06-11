@@ -1,0 +1,74 @@
+// @import "../../assets/styles/mixins.scss";
+@import "../../assets//styles/variables.scss";
+
+//i think use css root variables is better
+
+
+// @include logo-font;
+
+@font-face{
+    font-family:'Ubuntu';
+    src: url("../../assets/fonts/Ubuntu-Bold.ttf");
+}
+
+
+
+
+
+#header{
+    border-bottom: 2px solid $light-grey;
+    display:flex;
+    height:10vh;
+    max-height: 40px;
+    margin-bottom: auto;
+    gap:0.5rem;
+    align-items: center;
+    padding: 1.5rem 0 1.7rem 0;
+    // padding: 1.5rem 0.8rem 2.0rem 0.;
+    margin-bottom: 0.8rem;;
+
+    #site-brand{ //
+        font-family:'Ubuntu';
+        font-size:1.5rem;
+        width: 100%;
+        height: auto;
+        color:black;
+    }
+
+
+    img {
+        height:2rem;
+        // border: 2px solid red;
+        width:auto;
+    }
+
+    .brand{
+        display:flex;
+        align-items: center;
+        margin-left: 10%;
+        margin-right:auto;
+        
+    }
+    a{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color: var(--font-light);
+        margin: 0px 5px;
+
+        :visited{
+            text-decoration: none;;
+        }
+
+        &:hover{
+            color: #171718ee;
+        }
+    
+    }
+    .navLinks{
+        margin-right:10%;
+        gap: 0.5rem;
+    }
+
+
+
+}
+
