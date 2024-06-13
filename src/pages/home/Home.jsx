@@ -45,24 +45,20 @@ export default function Home(){
 // first, create an artlce style
     return (
         <>
-        <div id="main">
-
             <div className="content">
 
                 <div className="article-box">
                     {articles && articles.map(article=>(
-                        <ArticleCard
+                        <ArticleCard key={article._id}
                             article={article}
                         />
                     ))}
                 </div>
-
                 <div className="tag-box">
                     <p>Hi</p>
                 </div>
 
             </div>
-        </div>
         </>
     )
 }

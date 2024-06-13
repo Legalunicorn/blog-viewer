@@ -36,6 +36,9 @@
             font-family: Alata,Arial;
             font-weight: bold;
             font-size: 1.55rem;
+            color:black;
+
+            text-decoration: none;
 
             &:hover{
                 text-decoration: underline;
@@ -70,7 +73,10 @@
 
     
     .article-image{
+        object-fit: cover;
+        aspect-ratio: 1/1;
         max-width: 20%;
+        // height: 20%;
     }
     
 

@@ -30,7 +30,10 @@ function Layout(){
     return (
         <>
             <Header/>
-            <Outlet />
+            <div id="main">
+                <Outlet />
+            </div>
+            
             <Footer />
         </>
     )
@@ -46,17 +49,20 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,//TODO
-                children:[
-                    {
-                        path: '/articles/:id',
-                        element: <ArticlePage/>
-                    }
-                ]
+                // children:[
+                //     {
+                //         path: '/articles/:id',
+                //         element: <ArticlePage/>
+                //     }
+                // ]
             },
             {
                 path: '/login',
                 element: <Login/>,
 
+            },{
+                path: '/articles/:id',
+                element:<ArticlePage/>
             }
         ]
     }

@@ -3,6 +3,7 @@
 import "./articleCard.scss"
 
 import { formatDistanceToNow } from "date-fns"
+import { Link } from "react-router-dom";
 
 
 export default function ArticleCard({
@@ -20,7 +21,10 @@ export default function ArticleCard({
         <>
         <div className="article-card">
             <div className="article-content">
-                <a className="article-title">{article.title}</a>
+                <Link className="article-title" to={'/articles/'+article._id}>
+                    {article.title}
+                </Link>
+                {/* <a href={'/articles/'+article._id} className="article-title">{article.title}</a> */}
                 <div className="article-meta">
                     <p>{article.author.display_name} •</p>
                     <p>{createdAgo}</p>

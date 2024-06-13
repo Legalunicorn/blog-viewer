@@ -1,0 +1,44 @@
+.article-header{
+    // border: 5px solid red;
+    margin-top:2rem;
+    margin-bottom: 3.5rem;
+    display:flex;
+    flex-direction: column;
+
+    .article-title{
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        // border:4px solid black;
+
+    }
+
+    .article-meta{
+        margin-left: 0.5rem;
+        display: flex;
+        gap: 8px;
+        margin-bottom: 0.5rem;
+        color: var(--font-grey);
+
+        p:nth-child(2){
+            margin-right:auto;
+        }
+    }
+    .article-likes{
+        margin-left: 0.5rem;
+        margin-bottom: 1.5rem;
+        color: #707070;
+        display: flex;
+        gap: 5px;
+
+    }
+    .article-image{
+        margin:auto;
+        max-width: 90%;
+
+        img {
+            max-height: 800px;
+        }
+    }
+
+}

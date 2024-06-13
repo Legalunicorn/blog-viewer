@@ -14,8 +14,13 @@
     line-height: 1.5;
     font-weight: 400;
     font-size: 16px; //for web usage 
+    color: #212427;
 
     --font-light: #707070;
+    --font-grey: #4e4e4e;
+    --font-dark-grey: #212427;
+    --max-content-width: 1200px;
+
 }
 
 *,
@@ -25,6 +30,22 @@
     padding:0;
     box-sizing: border-box;
 }
+
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 5px solid red;
+    // margin: 0 10%;
+}
+//i dont want to alter the header and footer
+// #root{
+//     display: flex;
+//     flex-direction: column;
+//     border:3px solid orange;
+//     align-items: center;
+// }
 
 a{
     text-decoration: none;

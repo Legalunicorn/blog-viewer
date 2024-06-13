@@ -1,0 +1,42 @@
+.comment-form{
+    // margin: 40px;
+    // border: 2px solid red;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+
+
+    textarea{
+        margin: 1rem 0;
+        border: none;
+        outline:none;
+        border-bottom: 2px solid #eee;
+        // border-radius: 0.5rem;
+        font-family: Inter;
+        width: 90%;
+        padding: 0.5rem;
+        resize:none;
+
+        :focus{
+            outline:none;
+        }
+    }
+
+}
+
+.form button{
+    font-family: Inter;
+    width:fit-content;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    // color: #3572EF;
+    color: var(--font-dark-grey);
+    border:0.1rem solid var(--font-dark-grey);
+    border-radius: 1rem;
+
+    &:hover{
+        background-color: #538cff;
+        color: #eee;
+        border: 0.1rem solid #538cff;
+    }
+}
