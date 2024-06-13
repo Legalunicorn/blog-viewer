@@ -21,6 +21,9 @@ export const authReducer = (state,action) =>{
 }
 
 
+//the AuthContext state encompasses two things
+// 1. JWT
+// 2. ID
 
 export const AuthContextProvider = ({children}) =>{
     const [state,dispatch] = useReducer(authReducer,{
@@ -30,7 +33,7 @@ export const AuthContextProvider = ({children}) =>{
     useEffect(()=>{
         const user = localStorage.getItem('user');
         if (user){
-            dispatch({type:"LOGIN",payload:user})
+            dispatch({type:"LOGIN",payload:JSON.parse(user)})
         }
     },[])
 

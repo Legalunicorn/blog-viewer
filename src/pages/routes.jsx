@@ -12,7 +12,6 @@ import Login from "./login/Login"
 import ArticlePage from "./ArticlePage/ArticlePage.jsx"
 
 //context
-// import {useAuthContext} from "../hooks/useAuthContext.js"
 
 
 //react

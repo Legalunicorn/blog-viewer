@@ -22,10 +22,18 @@
         }
     }
 
+    .comment-buttons{
+        display:flex;
+        gap: 0.5rem;
+
+    }
+
 }
 
 .form button{
+    transition: 0.3s;
     font-family: Inter;
+    font-weight: bold;
     width:fit-content;
     padding: 0.25rem 0.5rem;
     background-color: white;

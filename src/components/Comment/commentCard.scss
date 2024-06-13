@@ -1,9 +1,10 @@
 .comment-card{
     background-color: white;
     padding: 0.3rem 0.5rem 0.8rem 0.5rem;
-    border-radius: 0.1rem;
     margin-bottom: 2rem;
+    border-radius: 0.4rem;
     border-left: 3px solid #eee;
+    border-bottom: 3px solid #eee;
     // border: 3px solid red;
 
     .comment-meta{
@@ -23,6 +24,11 @@
         }
     }
     .comment-body{
+        padding-left: 0.5rem;
         white-space: pre-wrap;
+    }
+
+    .the-author{
+        color:blue;
     }
 }

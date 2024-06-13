@@ -6,6 +6,7 @@
     margin: 0.5rem;
     min-height: 15vh;
     position: relative;
+    max-height: 150px;
     :after{
         content: "";
         position:absolute;

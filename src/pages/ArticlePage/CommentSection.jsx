@@ -1,5 +1,5 @@
 import "./commentSection.scss"
-import { useAuthContext } from "../../hooks/useAuthContext"
+// import { useAuthContext } from "../../hooks/useAuthContext"
 import CommentCard from "../../components/Comment/CommentCard"
 
 

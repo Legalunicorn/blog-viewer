@@ -11,9 +11,6 @@ export const useAuthContext = () =>{
     const context = useContext(AuthContext); //returns state and displatch
     //check we have access to context
 
-
-
-
     if (!context){
         throw Error("Auth context accessed outside of scope.")
     }

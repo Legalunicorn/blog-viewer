@@ -20,9 +20,16 @@ export default function CreateComment({
 }){
     const nagivate = useNavigate();
     const {user} = useAuthContext();
+
+    const handleCancel = (e)=>{
+        console.log(e.target.parentNode.parentNode)
+        e.target.parentNode.parentNode.firstChild.value=""
+    }
+
+
     const handleSubmit =(e)=>{
         e.preventDefault();
-        if (!user){
+        if (!user){ //if just checking if its not null
             console.log("rerouting to login page")
             nagivate("/login",{replace:true});
         }
@@ -35,7 +42,7 @@ export default function CreateComment({
                 headers:{
                     "Content-Type":'application/JSON',
                     //TODO make a custom customAuthFetch on the CMS client
-                    'Authorization': `Bearer ${user}`
+                    'Authorization': `Bearer ${user.token}` //BUG this should be JWT but ive changed it to be id + jwt
                 }
             }).then(res=>{
                 if (res.ok) return res.json(); //Should be receiving the comment created from the DB
@@ -64,7 +71,12 @@ export default function CreateComment({
                 />
                 {/* <input name="comment_body" placeholder="Type something to comment..." 
                 type="textarea"/> */}
-                <button type="submit">Submit</button>
+                <div className="comment-buttons">
+                    <button className="cancel" type="button" onClick={handleCancel}>Cancel</button>
+                    <button type="submit">Submit</button>
+                    
+                </div>
+         
             </Form>
         </div>
     )

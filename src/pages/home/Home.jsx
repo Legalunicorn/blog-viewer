@@ -17,11 +17,19 @@ export default function Home(){
     const [searchParams,setSearchParams] = useSearchParams();
 
     useEffect(()=>{
+        //when a user logs in after /api/auth/google
+        //they are required here with the token in the params
+        //BUG add user id in the search params also and save it in localStorage
+
         const token = searchParams.get("token");
-        if (token!==null){
-            localStorage.setItem('user',token)
-            dispatch(({type:"LOGIN",payload:token})) 
-            setSearchParams(); //delete the jwt from the URl
+        const id = searchParams.get("id");
+        if (token!==null && id!==null){
+          
+            dispatch({type:'LOGIN',payload:{token:token,id:id}})
+            localStorage.setItem('user',JSON.stringify({token:token,id:id}))
+            // localStorage.setItem('user',token)
+            // dispatch(({type:"LOGIN",payload:token})) 
+            setSearchParams(); //delete the jwt and idfrom the URl
         }
 
 
@@ -46,7 +54,6 @@ export default function Home(){
     return (
         <>
             <div className="content">
-
                 <div className="article-box">
                     {articles && articles.map(article=>(
                         <ArticleCard key={article._id}
