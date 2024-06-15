@@ -43,8 +43,8 @@
     border-radius: 1rem;
 
     &:hover{
-        background-color: #538cff;
+        background-color: var(--font-light-blue);
         color: #eee;
-        border: 0.1rem solid #538cff;
+        border: 0.1rem solid var(--font-light-blue);
     }
 }

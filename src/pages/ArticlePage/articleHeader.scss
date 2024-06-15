@@ -33,11 +33,13 @@
 
     }
     .article-image{
+        border: 2px solid red;
         margin:auto;
         max-width: 90%;
 
         img {
             max-height: 800px;
+            // width: 10%;
         }
     }
 

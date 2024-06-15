@@ -19,6 +19,8 @@
     --font-light: #707070;
     --font-grey: #4e4e4e;
     --font-dark-grey: #212427;
+    --font-light-blue: #538cff;
+    --font-green: #1e9c5d;
     --max-content-width: 1100px;
 
 }
@@ -36,6 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    // border: 5px solid pink;
     // border: 5px solid red;
     // margin: 0 10%;
 }

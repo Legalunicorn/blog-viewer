@@ -10,10 +10,12 @@ TODO
 
 TODO
 (high priority)
+
 - article page 
-    - handle the markdown (main body)
-    - handle the big articeCard at the top
-    - display comments 
+    - handle the markdown (main body) (DONE)
+    - handle the big articeCard at the top (DONE)
+    - display comments (DONE)
+    - Like article
 
 - implement a login/signup system with LOCAL STRATEGY
 

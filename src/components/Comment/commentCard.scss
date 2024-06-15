@@ -8,18 +8,17 @@
     // border: 3px solid red;
 
     .comment-meta{
-        color: var(--font-grey);
         display:flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.35rem;
         span{
             font-size: 2rem;
             // height:150%;
         }
 
         div{
-            font-size: 0.9rem;;
+            // font-size: 0.9rem;;
             // border: 2px solid red;
         }
     }
@@ -29,6 +28,13 @@
     }
 
     .the-author{
-        color:blue;
+        color: var(--font-green);
+        // color: #1e469c;
+    }
+
+    .comment-date{
+        color: var(--font-grey);
+        font-size: 0.85rem;
+        font-style: italic;
     }
 }
