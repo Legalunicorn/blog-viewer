@@ -31,7 +31,7 @@
 }
 
 .form button{
-    transition: 0.3s;
+    transition: 0.2s;
     font-family: Inter;
     font-weight: bold;
     width:fit-content;
@@ -40,7 +40,7 @@
     // color: #3572EF;
     color: var(--font-dark-grey);
     border:0.1rem solid var(--font-dark-grey);
-    border-radius: 1rem;
+    border-radius: 0.6rem;
 
     &:hover{
         background-color: var(--font-light-blue);

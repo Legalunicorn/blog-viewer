@@ -28,7 +28,13 @@ export default function CommentCard({
 
 
     const handleChange= (e)=>{
-        setTextArea(e.target.value);
+        setTextArea(e.target.value); 
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        handleEdit(e)
+        flipEditing()
     }
 
 
@@ -68,7 +74,7 @@ export default function CommentCard({
             
             {isEditing?(
                 // e.target.comment_body.value
-                <Form className="comment-form" onSubmit={handleEdit} data-id={comment._id}>
+                <Form className="comment-form" data-id={comment._id} onSubmit={handleSubmit}>
                     <TextareaAutosize
                         className="comment-edit"
                         name="comment_body"
@@ -84,7 +90,7 @@ export default function CommentCard({
                         }}>
                             Cancel
                         </button>
-                        <button type="submit">Edit</button>
+                        <button type="submit">Save</button>
                     </div>
                 </Form>
 

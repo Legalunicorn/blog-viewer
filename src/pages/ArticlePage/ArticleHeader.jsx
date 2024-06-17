@@ -4,6 +4,7 @@ import UpdateLikes from "../../components/Likes/UpdateLikes";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useEffect,useState } from "react";
 import { customFetch } from "../../utils/customFetch";
+import Tag from "../../components/Tag/Tag";
 
 //this is loaded regardless if the user is logged in or not
 //therefore 
@@ -17,6 +18,7 @@ export default function ArticleHeader({
     const [loading,setLoading] = useState(true);
     const [error,setError] = useState(false);
     const [hasLiked,setHasLiked] = useState();
+    console.log("test",article)
 
     useEffect(()=>{
         console.log("loading header: ")
@@ -31,7 +33,6 @@ export default function ArticleHeader({
                 setError(true);
             }).then(data=>{
                 console.log("HASLIKED?:",data.has_liked);
-
                 setLoading(false);
                 setHasLiked(data.has_liked);
             }).catch(err=>{
@@ -49,7 +50,17 @@ export default function ArticleHeader({
     return (
         <div className="article-header"> 
             <p className="article-title">{article.title}</p>
-            {/* <hr/> */}
+
+            <div className="tag-list">
+                {article.tags.map(tag=>(
+                    <Tag
+                        key={tag._id}
+                        tag_name={tag.name}
+                    />
+                ))}
+            </div>
+
+
             <div className="article-meta">
                 <p>{article.author.display_name} •</p>
                 <p>{formattedDate}</p>

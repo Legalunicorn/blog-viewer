@@ -35,7 +35,7 @@ export default function Home(){
                     import.meta.env.VITE_API_URL +'/articles'
                 );
                 const json = await req.json();
-                // console.log(json);
+                console.log(json);
                 setArticles(json.all_articles);
                 setLoading(false);
 

@@ -19,6 +19,7 @@ export default function CommentSection ({
 
     const handleEdit = (e) =>{
         const id = e.target.dataset.id;
+        console.log("id is ",id);
         console.log("to edit id ",id);
         const body = e.target.comment_body.value;
         console.log("new body is",body);
@@ -27,16 +28,19 @@ export default function CommentSection ({
         customFetch(`/comments/${id}`,{
             method:"PATCH",
             mode:"cors",
-            headres:{
+            headers:{
                 'Authorization': `Bearer ${user.token}`,
                 "Content-Type":'application/JSON',
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({body})
         }).then(res=>{
             if (res.ok) return res.json();
             throw Error("Couldnt edit comment")
         }).then(data=>{
-            //update comment states
+            setComments(comments.map(comm=>{
+                if (comm._id===data.comment._id) return data.comment;
+                else                             return comm;
+            }))
         })
 
     }
@@ -56,8 +60,6 @@ export default function CommentSection ({
             if (res.ok) return res.json();
             throw Error("Deletion of comment failed.")
         }).then(data=>{ //data has the id br
-            // console.log("deleting from backend")
-            // console.log(data);
             setComments(
                 comments.filter(item=>item._id!=data.comment._id)
             )
@@ -67,7 +69,6 @@ export default function CommentSection ({
 
     }    
 
-    //do you dont have to maintain a giant array of all comments inside each comment card
     // console.log("hi"+comments);
     return (
         <div className="comment-section">

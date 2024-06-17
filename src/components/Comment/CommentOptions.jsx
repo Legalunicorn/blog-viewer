@@ -23,29 +23,15 @@ export default function CommentOptions({
         setIsOpen(!isOpen);
     }
 
+    const handleClickEdit = () =>{
+        //we change the comment body to a form
+        //we also close the drop down options menu in this component
+        flipEditing(),
+        setIsOpen(false)
+    }
 
-    // Need a sneaky way to refresh the data
-    // const handleDelete = () =>{
 
-    //     customFetch(`/comments/${comment_id}`,{
-    //         mode: "cors",
-    //         method: "DELETE",
-    //         headers:{
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     }).then(res=>{
-    //         if (res.ok) return res.json();
-    //         throw Error("Deletion of comment failed.")
-    //     }).then(data=>{ //data has the id br
-    //         setComments(
-    //             comments.filter(item=>item._id!=data._id)
-    //         )
-    //     }).catch(err=>{
-    //         console.log(err);
-    //     })
-
-    // }
-
+  
     return (
         <div className="dropdown">
                 <span onClick={handleDrop} className="dropdown-button material-symbols-outlined">more_vert</span>
@@ -56,7 +42,7 @@ export default function CommentOptions({
                         delete
                         </span> */}
                     </p>
-                    <p onClick={flipEditing}>Edit</p>
+                    <p onClick={handleClickEdit}>Edit</p>
                 </div>
                 }
 
