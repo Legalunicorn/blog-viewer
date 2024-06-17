@@ -23,6 +23,7 @@ export default function ArticlePage() {
     const { id } = useParams();
 
     useEffect(() => {
+
         //TODO get the article and comments from backend api and lay them 
         customFetch(`/articles/${id}`)
             .then(res => {
@@ -42,15 +43,10 @@ export default function ArticlePage() {
 
     //TODO implementing loading thing, for now no errorr bc use state is [] not null 
     return (
-        <>
-            {!isLoading && <div className="article-view">
-                {/* <div>
-
-                    <p>//This is for the article card w large thumbnail</p>
-                </div> */}
-                <ArticleHeader
-                    article={article}
-                />
+        <div className="article-view">
+            {!isLoading && 
+            <>
+                <ArticleHeader article={article} />
                 <div>
                     <ArticleMarkdown
                         article_body={article.body}
@@ -63,19 +59,17 @@ export default function ArticlePage() {
                         comments={comments}
                         setComments={setComments}
                     />
-                    {/* comment form goes here? */}
                 </div>
                 <div>
                     <CommentSection
                         comments={comments}
+                        setComments={setComments}
                         
                     />
-
                 </div>
-            </div>}
-        </>
+            </>}
+        </div>
 
     )
 
 }
-//article-view -> for the entire winfow

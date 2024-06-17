@@ -24,7 +24,6 @@ export default function ArticleCard({
                 <Link className="article-title" to={'/articles/'+article._id}>
                     {article.title}
                 </Link>
-                {/* <a href={'/articles/'+article._id} className="article-title">{article.title}</a> */}
                 <div className="article-meta">
                     <p>{article.author.display_name} •</p>
                     <p>{createdAgo}</p>

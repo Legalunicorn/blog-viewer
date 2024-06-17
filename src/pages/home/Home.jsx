@@ -15,11 +15,10 @@ export default function Home(){
 
     const {dispatch} = useAuthContext();
     const [searchParams,setSearchParams] = useSearchParams();
+    const [isLoading,setLoading] = useState(true);
 
     useEffect(()=>{
         //when a user logs in after /api/auth/google
-        //they are required here with the token in the params
-        //BUG add user id in the search params also and save it in localStorage
 
         const token = searchParams.get("token");
         const id = searchParams.get("id");
@@ -27,11 +26,8 @@ export default function Home(){
           
             dispatch({type:'LOGIN',payload:{token:token,id:id}})
             localStorage.setItem('user',JSON.stringify({token:token,id:id}))
-            // localStorage.setItem('user',token)
-            // dispatch(({type:"LOGIN",payload:token})) 
             setSearchParams(); //delete the jwt and idfrom the URl
         }
-
 
         const getArticles = async () =>{
             try {
@@ -39,8 +35,9 @@ export default function Home(){
                     import.meta.env.VITE_API_URL +'/articles'
                 );
                 const json = await req.json();
-                console.log(json);
+                // console.log(json);
                 setArticles(json.all_articles);
+                setLoading(false);
 
             } catch(err){
                 console.log(err); 
@@ -52,14 +49,17 @@ export default function Home(){
 //create an article loader
 // first, create an artlce style
     return (
+
         <>
             <div className="content">
                 <div className="article-box">
-                    {articles && articles.map(article=>(
+                    {!isLoading &&
+                    articles.map(article=>(
                         <ArticleCard key={article._id}
                             article={article}
                         />
-                    ))}
+                    ))
+                    }
                 </div>
                 <div className="tag-box">
                     <p>Hi</p>

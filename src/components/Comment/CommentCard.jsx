@@ -7,33 +7,91 @@
 import { formatDistanceToNow } from "date-fns";
 import "./commentCard.scss"
 import { useAuthContext } from "../../hooks/useAuthContext";
+import CommentOptions from "./CommentOptions";
+import { useState } from "react";
+import TextareaAutosize from "react-textarea-autosize"; 
+import { Form } from "react-router-dom";
 
-export default function CommentCard({comment}){
+export default function CommentCard({
+    comment,
+    handleDelete,
+    handleEdit
+}){
     const date_distance = formatDistanceToNow(comment.createdAt);
     const {user} = useAuthContext(); //get the user from auth context
-
-    //BUG user is the JWT not the id of the user. please find a way to fix this
     const is_author = (user && user.id===comment.author._id)? true:false;
-    // console.log(user.id+"   . . . . ..   "+comment.author._id);
-    // console.log(is_author)
     //check if the commenter belongs to the usser
-    // first check that the user is not null?
+
+    const [isEditing,setIsEditing] = useState(false);
+    const [textArea,setTextArea] = useState(comment.body)
+
+
+
+    const handleChange= (e)=>{
+        setTextArea(e.target.value);
+    }
+
+
+    
+    const flipEditing = () =>{
+        setTextArea(comment.body)
+        setIsEditing(!isEditing);
+    }
+
+
     return (
         <div className="comment-card">
             <div className="comment-meta">
                 {/* //TODO bring up the is_author ternary and change the google icon color too */}
-                <span className="material-symbols-outlined">person</span>
+                {is_author?
+                    <span className="the-author material-symbols-outlined">person</span>
+                :
+                    <span className="material-symbols-outlined">person</span>
+                }
                 <div>
                     {is_author?
-                    <p className="the-author">{comment.author.display_name} (You)</p>:
-                    <p className="">{comment.author.display_name}</p>
+                        <p className="the-author">{comment.author.display_name} (You)</p>
+                    :
+                        <p className="">{comment.author.display_name}</p>
                     }
                     <p className="comment-date">{date_distance}</p>
                 </div>
+                {is_author && (
+                    <CommentOptions
+                        comment_id = {comment._id}
+                        handleDelete ={handleDelete}
+                        flipEditing = {flipEditing}
+                    />
+                )}
 
             </div>
+            
+            {isEditing?(
+                // e.target.comment_body.value
+                <Form className="comment-form" onSubmit={handleEdit} data-id={comment._id}>
+                    <TextareaAutosize
+                        className="comment-edit"
+                        name="comment_body"
+                        value={textArea}
+                        onChange={handleChange}
 
+                    />
+                    <div className="comment-buttons form">
+                        <button className="cancel" type="button" 
+                        onClick={()=>{
+                            flipEditing()
+
+                        }}>
+                            Cancel
+                        </button>
+                        <button type="submit">Edit</button>
+                    </div>
+                </Form>
+
+            )
+            :
             <p className="comment-body">{comment.body}</p>
+            }
         </div>
     )
 }

@@ -10,6 +10,8 @@
     justify-content: center;
     margin-left:5%;
     margin-right:5%;
+    min-height: 100vh;
+    min-width: 30vw;
 
     .article-box{
         // border: 2px solid green;
@@ -22,7 +24,7 @@
 }
 
 .tag-box{
-    border: 2px solid pink;
+    // border: 2px solid pink;
     width:300px;
 }
 

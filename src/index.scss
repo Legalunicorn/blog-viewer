@@ -38,8 +38,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: 5px solid pink;
-    // border: 5px solid red;
     // margin: 0 10%;
 }
 //i dont want to alter the header and footer
@@ -56,6 +54,14 @@ a{
 
 body{
     min-height: 100vh;
+}
+
+.material-symbols-outlined{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 
