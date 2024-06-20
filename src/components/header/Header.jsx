@@ -23,7 +23,7 @@ export default function Header(){
             {/* LOGO + BRAND NAMW */}
             <div className="brand">
                 <img src={logo} alt="web_logo" />
-                <Link id="site-brand" to={'/'}>AlgoRice</Link>
+                <Link className="site-brand" to={'/'}>AlgoRice</Link>
                 
             </div>
             

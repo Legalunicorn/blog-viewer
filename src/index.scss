@@ -1,5 +1,6 @@
 @import "./assets//styles/mixins.scss";
 @import "./assets//styles/variables.scss";
+@import "./assets//styles/common.scss";
 
 
 @font-face{
@@ -34,19 +35,14 @@
 }
 
 
+
 #main{
     display: flex;
     flex-direction: column;
     align-items: center;
     // margin: 0 10%;
 }
-//i dont want to alter the header and footer
-// #root{
-//     display: flex;
-//     flex-direction: column;
-//     border:3px solid orange;
-//     align-items: center;
-// }
+
 
 a{
     text-decoration: none;
@@ -63,6 +59,12 @@ body{
     -o-user-select: none;
     user-select: none;
 }
+
+*:focus{
+    outline:none;
+}
+
+
 
 
 // h1,

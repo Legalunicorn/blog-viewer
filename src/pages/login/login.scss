@@ -1,0 +1,117 @@
+
+
+.login-main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 95vh;
+    background-color: #eee;
+}
+
+.email-form{
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid red;
+    padding: 1.5rem 0;
+    // border-bottom: 1px solid #c5c3c3;
+}
+
+.login-form{
+    // border: 2px solid green;
+    width: 50vw;
+    max-width: 600px;
+    min-height: 300px;
+
+    background-color: white;
+    box-shadow: -4px 4px 5px #d6d2d2;
+
+    margin-top: 5rem;
+    padding: 2rem 5rem;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    .site-brand{
+        font-family: Ubuntu;
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}
+
+.form-button{
+    // height: 2rem;
+    // width: fit-content;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: 1px solid #6b6666;
+    border-radius: 0.7rem;
+    padding: 0.4rem 1.2rem;
+    background-color: white;
+    text-decoration: none;
+    transition: 0.2s;
+
+
+
+    a{
+        all:unset;
+    }
+
+    &:hover{
+        color: white;
+        border: 1px solid var(--font-light-blue);
+        background-color: var(--font-light-blue);
+
+    }
+
+}
+
+.other-option{
+    margin-top: 0.8rem;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+
+    .google{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        height: 1.8rem;
+    }
+}
+
+
+//input 
+label{
+    margin-top: 1.5rem;
+}
+
+input{
+    // width: fit-content;
+    color: rgb(80, 79, 79);
+    font-family: Inter;
+    font-size: 1rem;
+    border: 0;
+    // border-bottom: 1px solid var(--font-dark-grey);
+    border-bottom: 1px solid #eee;
+    padding: 0.4rem 0.5rem 0.4rem 0;
+    margin: 1.2rem 0;
+    // margin-bottom: 0.5rem;
+    transition: 0.25s ease-in-out;
+
+    &:focus{
+        outline:none;
+        border-bottom: 1px solid var(--font-dark-grey);
+        transform: scale(1.02);
+    }
+
+    &:invalid{
+        border-bottom: 1px solid red;
+    }
+}

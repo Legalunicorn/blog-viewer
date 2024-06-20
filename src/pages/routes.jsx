@@ -10,6 +10,7 @@ import Footer from "../components/footer/Footer.jsx"
 import Home from "./home/Home.jsx";
 import Login from "./login/Login"
 import ArticlePage from "./ArticlePage/ArticlePage.jsx"
+import Signup from "./signup/Signup.jsx";
 
 //context
 
@@ -48,12 +49,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,//TODO
-                // children:[
-                //     {
-                //         path: '/articles/:id',
-                //         element: <ArticlePage/>
-                //     }
-                // ]
             },
             {
                 path: '/login',
@@ -62,6 +57,9 @@ const router = createBrowserRouter([
             },{
                 path: '/articles/:id',
                 element:<ArticlePage/>
+            },{
+                path:'/signup',
+                element:<Signup/>
             }
         ]
     }

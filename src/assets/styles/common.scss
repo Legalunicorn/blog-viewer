@@ -1,0 +1,23 @@
+.error-message{
+    color: red;
+    margin: 0.7rem 0;
+    padding: 0.2rem;
+    // font-style:italic;
+    border: 1px solid red;
+    background-color: #fff2f2;
+    border-radius: 0.2rem;
+    text-align: center;
+    // border-radius: 0.2rem;
+}
+
+.error-group{
+    margin: 1rem 0;
+}
+
+.faint{
+    color: #888;
+    
+    &.p{
+        font-style: italic;
+    }
+}

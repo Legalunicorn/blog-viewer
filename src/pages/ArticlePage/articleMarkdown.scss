@@ -1,4 +1,14 @@
-.article_body{
-    color:green;
+.article-body{
     white-space: 'pre-wrap';
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    h1{
+        font-family: Alata;
+        margin-bottom: 0.5rem;
+    }
+
+    pre{
+        margin: 1rem 0;
+    }
 }

@@ -17,6 +17,8 @@ export default function CommentCard({
     handleDelete,
     handleEdit
 }){
+
+    console.log("format",comment.body);
     const date_distance = formatDistanceToNow(comment.createdAt);
     const {user} = useAuthContext(); //get the user from auth context
     const is_author = (user && user.id===comment.author._id)? true:false;

@@ -46,12 +46,16 @@ export default function ArticleHeader({
         }
     },[])
 
+
+    //parse the image
+    console.log("LOADING IMG:>.",article.image);
+
     //TODO handle the link buttom
     return (
         <div className="article-header"> 
             <p className="article-title">{article.title}</p>
 
-            <div className="tag-list">
+            <div className="big-tag-list">
                 {article.tags.map(tag=>(
                     <Tag
                         key={tag._id}

@@ -5,6 +5,7 @@
 
 import Markdown from "react-markdown";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import "./articleMarkdown.scss"
 // import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 

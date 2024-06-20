@@ -26,7 +26,7 @@ export default function ArticleCard({
                     {article.title}
                 </Link>
 
-                <div className="tag-list">
+                <div className="tag-list-home">
                     {article.tags.map(tag=>(
                         <Tag
                             key={tag._id}
@@ -34,9 +34,6 @@ export default function ArticleCard({
                         />
                     ))}
                 </div>
-
-
-
 
                 <div className="article-meta">
                     <p>{article.author.display_name} •</p>
