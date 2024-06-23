@@ -45,11 +45,12 @@
         margin:auto;
         // display: flex;
         // align-items: center;
+        
         max-width: var(--max-content-width);
 
         img {
+            width: var(--max-content-width);
             max-height: 700px;
-            // width: 10%;
             max-width: 100%;
         }
     }

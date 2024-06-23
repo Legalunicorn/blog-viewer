@@ -1,25 +1,28 @@
 
 import { useEffect ,useState} from "react";
 import { useSearchParams } from "react-router-dom";
-
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 //components
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
+import ViewLoader from "./ViewLoader";
+import TagList from "./TagList";
+import BeatLoad from "../../components/Util/BeatLoad";
 
 import "./home.scss"
 
 export default function Home(){
-    const [articles,setArticles] = useState(); //TODO for now its [], to by pass loading, handle the loading with UL later
-    // const [loading,setLoading] = useState(false);
+    const [articles,setArticles] = useState();
+    const [topArticles,setTopArticles] = useState();
+    const [tags,setTags] = useState();
 
     const {dispatch} = useAuthContext();
     const [searchParams,setSearchParams] = useSearchParams();
+
     const [isLoading,setLoading] = useState(true);
+    const [view,setView] = useState('recent') //recent or top
 
     useEffect(()=>{
-        //when a user logs in after /api/auth/google
-
         const token = searchParams.get("token");
         const id = searchParams.get("id");
         if (token!==null && id!==null){
@@ -37,33 +40,53 @@ export default function Home(){
                 const json = await req.json();
                 console.log(json);
                 setArticles(json.all_articles);
+                setTopArticles(json.top_articles);
+                setTags(json.tags);
                 setLoading(false);
 
             } catch(err){
+                //404? internal server error? goes here instead 
                 console.log(err); 
             }
         }
         getArticles();
     },[])
 
-//create an article loader
-// first, create an artlce style
-    return (
 
+    //TODO move "content" class to index.scss instead 
+    return (
         <>
-            <div className="content">
+            <div className="content"> 
                 <div className="article-box">
-                    {!isLoading &&
-                    articles.map(article=>(
-                        <ArticleCard key={article._id}
-                            article={article}
-                        />
-                    ))
+                    <div className="view-setter">
+                        <span onClick={()=>setView('recent')}>Recent</span>
+                        <span onClick={()=>setView('top')}>Top</span>
+                       
+                    </div>
+
+                    {!isLoading ? 
+                        view=='recent' ? 
+                            <ViewLoader articles={articles}/>:
+                            <ViewLoader articles={topArticles}/>
+                    :
+                    <BeatLoad
+                        loading={isLoading}
+                        size={20}
+
+                    />
+
                     }
                 </div>
+
+
+
                 <div className="tag-box">
-                    <p>Hi</p>
+                    <p className="tag-header">Tags</p>
+                    {!isLoading && 
+                    <TagList className="tag-list" tags={tags} />
+                    }
                 </div>
+                
 
             </div>
         </>

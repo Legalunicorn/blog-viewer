@@ -41,7 +41,7 @@ export default function Header(){
                     </>
 
                 )}
-                <Link to={'/about'}>About</Link>
+                {/* <Link to={'/about'}>About</Link> */}
             </div>
 
         </div>

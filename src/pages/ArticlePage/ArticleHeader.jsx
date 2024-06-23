@@ -18,7 +18,7 @@ export default function ArticleHeader({
     const [loading,setLoading] = useState(true);
     const [error,setError] = useState(false);
     const [hasLiked,setHasLiked] = useState();
-    console.log("test",article)
+    // console.log("test",article)
 
     useEffect(()=>{
         console.log("loading header: ")
@@ -49,6 +49,9 @@ export default function ArticleHeader({
 
     //parse the image
     console.log("LOADING IMG:>.",article.image);
+    console.log(JSON.stringify(article.image))
+
+    const unescaped_amp = article.image;
 
     //TODO handle the link buttom
     return (
@@ -59,7 +62,7 @@ export default function ArticleHeader({
                 {article.tags.map(tag=>(
                     <Tag
                         key={tag._id}
-                        tag_name={tag.name}
+                        tag={tag}
                     />
                 ))}
             </div>
@@ -85,7 +88,7 @@ export default function ArticleHeader({
             
 
             <div className="article-image">
-                <img src={article.image} alt="article thumbnail" />
+                <img src={unescaped_amp} alt={unescaped_amp} />
             </div>
             
         

@@ -1,21 +1,19 @@
 .article-card{  
-    // border: 2px solid red;
     display:flex;
     gap:0.5rem;
     border-bottom: 1px solid #eee;
-    padding: 1.2rem;
-    margin: 0.5rem;
-    min-height: 15vh;
+    padding: 1.3rem 1.2rem ;
     position: relative;
-    max-height: 250px;
+
+    transition: 0.2s ease-in-out;
 
     .article-content{
         display:flex;
-        
         flex-direction: column;
-    
+        margin-right:auto;
         width: 75%;
-        max-width: 800px;
+        // border: 2px solid red;
+        // max-width: 800px;
 
         .article-title{
             font-family: Alata,Arial;
@@ -29,12 +27,14 @@
                 text-decoration: underline;
             }
         }
-
-        .article-preview{
-            color: var(--font-light)
+        .card-body{
+            padding-left: 0.2rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .article-likes{
+            color: #777;
             display:flex;
             gap: 6px;
             width: fit-content;
@@ -55,11 +55,21 @@
     }
 
     .article-image{
+        // border: 2px solid red;
         object-fit: cover;
         aspect-ratio: 1/1;
-        max-width: 25%;
-        height: auto;
+        width: 25%; //the other side is 75%;
+        height: 70%;
+    
 
+
+    }
+
+
+    &:hover{
+        background-color: #fafafa;
+        // border-radius: 0.3rem;
+        // border: 1px solid #eee;
     }
 
 

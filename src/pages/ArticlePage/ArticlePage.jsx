@@ -12,6 +12,7 @@ import CreateComment from "../../components/Comment/createComment";
 import { customFetch } from "../../utils/customFetch";
 import { useParams } from "react-router-dom";
 import "./articlePage.scss"
+import BeatLoad from "../../components/Util/BeatLoad";
 
 //load the comments for this article as well
 //get the 
@@ -44,6 +45,13 @@ export default function ArticlePage() {
     //TODO implementing loading thing, for now no errorr bc use state is [] not null 
     return (
         <div className="article-view">
+            {isLoading &&
+                <BeatLoad
+                    size="20"
+                    loading={isLoading}
+                />
+             
+            }
             {!isLoading && 
             <>
                 <ArticleHeader article={article} />

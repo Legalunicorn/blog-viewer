@@ -1,9 +1,9 @@
 import { useAuthContext } from "../../hooks/useAuthContext"
 import "./login.scss"
 import { Form, useNavigate } from "react-router-dom"
-import google_logo from "./google-icon.png"
 import {useState} from 'react'
 import { customFetch } from "../../utils/customFetch"
+import GoogleButton from "../../components/Buttons/GoogleButton"
 
 export default function Login(){
 
@@ -12,6 +12,10 @@ export default function Login(){
     const nagivate = useNavigate();
     const [error,setError] = useState() //can be either "error" or "errors"
 
+
+    const debug = ()=>{
+        console.log("clicked!")
+    }
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -63,20 +67,6 @@ export default function Login(){
                 <Form onSubmit={handleSubmit} className="email-form">
                     <input required type="email" name="email" placeholder="Email"/>
                     <input required type="password" name="password" placeholder="Password"/>
-
-
-                    {/* //TODO handle this properly. now very messy */}
-                    {/* <div className="error-group">
-                        {error?.error &&
-                            <p className="error-message">• {error?.error}</p>
-                        }
-                        
-                        {error && error.errors && 
-                            error.errors.map((err,index)=>
-                                <p key={index} className="error-message">• {err.msg}</p>
-                            )   
-                        }
-                    </div> */}
                     {error && 
                     <p>
                         <p className="error-message">{error}</p>
@@ -89,10 +79,8 @@ export default function Login(){
 
                 <div className="other-option">
                     <p className="faint p">Or login with</p>
-                    <p className="google form-button">
-                    <img src={google_logo} alt="" />
-                    <a  className="google" href={`${import.meta.env.VITE_API_URL}/auth/google`}>Google</a>
-                    </p>
+                    <GoogleButton/>
+                    
                 </div>
  
                 

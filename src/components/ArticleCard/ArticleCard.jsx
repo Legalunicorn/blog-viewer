@@ -25,24 +25,27 @@ export default function ArticleCard({
                 <Link className="article-title" to={'/articles/'+article._id}>
                     {article.title}
                 </Link>
+                <div className="card-body">
+                    <div className="article-meta">
+                        <p>{article.author.display_name} •</p>
+                        <p>{createdAgo}</p>
+                    </div>
 
-                <div className="tag-list-home">
-                    {article.tags.map(tag=>(
-                        <Tag
-                            key={tag._id}
-                            tag_name={tag.name}
-                        />
-                    ))}
+                    <div className="tag-list-home">
+                        {article.tags.map(tag=>(
+                            <Tag
+                                key={tag._id}
+                                tag={tag}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="article-likes">
+                        <span className="material-symbols-outlined">favorite</span>
+                        <span>{article.likes_count}</span>
+                    </div>
                 </div>
 
-                <div className="article-meta">
-                    <p>{article.author.display_name} •</p>
-                    <p>{createdAgo}</p>
-                </div>
-                <div className="article-likes">
-                    <span className="material-symbols-outlined">favorite</span>
-                    <span>{article.likes_count}</span>
-                </div>
    
             </div>
             <img className="article-image" src={article.image} alt="Article_ image" />

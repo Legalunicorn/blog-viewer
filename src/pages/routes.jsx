@@ -11,6 +11,7 @@ import Home from "./home/Home.jsx";
 import Login from "./login/Login"
 import ArticlePage from "./ArticlePage/ArticlePage.jsx"
 import Signup from "./signup/Signup.jsx";
+import TagPage from "./tagPage/TagPage.jsx";
 
 //context
 
@@ -54,10 +55,18 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login/>,
 
-            },{
+            },
+            {
                 path: '/articles/:id',
                 element:<ArticlePage/>
-            },{
+            }
+            ,
+            {
+                path:"/articles/tags/:id",
+                element: <TagPage/>
+            }
+            ,
+            {
                 path:'/signup',
                 element:<Signup/>
             }

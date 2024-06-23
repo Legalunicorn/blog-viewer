@@ -2,30 +2,38 @@
 
 
 .content{
-
+    // border : 2px solid red;
     display:flex;
     max-width: var(--max-content-width);
-    // margin-left:auto;
-    // margin-right:auto;
     justify-content: center;
+    width: 90vw;
     margin-left:5%;
     margin-right:5%;
     min-height: 100vh;
     min-width: 30vw;
 
-    .article-box{
-        // border: 2px solid green;
+    .article-box{ //this is first child of content
+        //idk what this does but the article thumbnail chances size when commented
         display: flex;
         flex-direction: column;
+        width: 70%;
+
     }
 
+    .tag-box{
+        max-width: 30%;
+        padding: 0.8rem 0.5rem;
+    }
 
-    
-}
+    .tag-group{
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        // width: 100%;
+        // border: 1px solid red;
+    }
 
-.tag-box{
-    // border: 2px solid pink;
-    width:300px;
 }
 
 
@@ -33,6 +41,35 @@
     margin: 0.6rem 0.1rem;
     display:flex;
     gap: 0.45rem;
+}
+
+.tag-header{
+    font-family: Alata;
+    font-size: 1.5rem;
+}
+
+.view-setter{
+    display: flex;
+    gap: 2rem;
+    border-bottom: 2px solid #eee;
+    padding: 1.2rem 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; //border to have the same "padding" as the article card
+    font-size: 1.5rem;
+    font-family: Alata;
+
+    .selected{
+        text-decoration: underline;
+    }
+
+    span{ 
+        transition: 0.3s  ease-in-out;
+        &:hover{
+            transform: translateY(-0.2rem);
+            text-decoration: underline;
+        }
+    }
+
 }
 
 
