@@ -57,10 +57,11 @@ export default function Home(){
     return (
         <>
             <div className="content"> 
+
                 <div className="article-box">
                     <div className="view-setter">
-                        <span onClick={()=>setView('recent')}>Recent</span>
-                        <span onClick={()=>setView('top')}>Top</span>
+                        <span className={view=="recent" && 'selected-view'}  onClick={()=>setView('recent')}>Recent</span>
+                        <span className={view=="top" && 'selected-view'}  onClick={()=>setView('top')}>Top</span>
                        
                     </div>
 
@@ -72,7 +73,6 @@ export default function Home(){
                     <BeatLoad
                         loading={isLoading}
                         size={20}
-
                     />
 
                     }

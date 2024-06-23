@@ -2,13 +2,13 @@
 
 
 .content{
-    // border : 2px solid red;
     display:flex;
     max-width: var(--max-content-width);
-    justify-content: center;
+    // justify-content: center;
     width: 90vw;
     margin-left:5%;
     margin-right:5%;
+    margin-bottom: 20vh;
     min-height: 100vh;
     min-width: 30vw;
 
@@ -16,11 +16,14 @@
         //idk what this does but the article thumbnail chances size when commented
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 75%;
+        margin-right: auto;
+        min-height: 100vh;
 
     }
 
     .tag-box{
+        width: 25%;
         max-width: 30%;
         padding: 0.8rem 0.5rem;
     }
@@ -50,15 +53,19 @@
 
 .view-setter{
     display: flex;
-    gap: 2rem;
+    align-items:end;
+    display: flex;
+    gap: 1rem;
     border-bottom: 2px solid #eee;
     padding: 1.2rem 0.5rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem; //border to have the same "padding" as the article card
     font-size: 1.5rem;
     font-family: Alata;
+    color: var(--font-light);
 
-    .selected{
+    .selected-view{
+        color: var(--font-dark-grey);
         text-decoration: underline;
     }
 
@@ -69,6 +76,8 @@
             text-decoration: underline;
         }
     }
+
+
 
 }
 

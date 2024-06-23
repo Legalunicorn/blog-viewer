@@ -16,6 +16,8 @@
 
 
 #header{
+    // color: #ffffff;
+    background-color: #3e968b;
     border-bottom: 2px solid $light-grey;
     display:flex;
     height:10vh;
@@ -31,11 +33,13 @@
         font-size:1.5rem;
         width: 100%;
         height: auto;
-        color:black;
+        // color:black;
     }
 
 
     img {
+        // color: red;
+        filter: invert(99%) sepia(3%) saturate(813%) hue-rotate(154deg) brightness(114%) contrast(87%);
         height:2rem;
         // border: 2px solid red;
         width:auto;
@@ -49,17 +53,20 @@
         
     }
     a{
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        color: var(--font-light);
+        font-family: Alata,Inter,Arial;
+        font-size: 1.2rem;
+        color: black;
+        // color: var(--font-light);
+        color: #eee;
         margin: 0px 5px;
 
         :visited{
             text-decoration: none;;
         }
 
-        &:hover{
-            color: #171718ee;
-        }
+        // &:hover{
+        //     // color: #171718ee;
+        // }
     
     }
     .navLinks{

@@ -1,0 +1,26 @@
+
+.footer{
+    // min-height: 2vh;
+    background-color: var(--color-primary);
+    color: #eee;
+    // padding: 1.5rem 1rem;
+    display:flex;
+    gap: 2rem;
+    font-family: Alata;
+    
+
+    // div{
+    //     padding: 1.5rem;
+    //     background-color: #a0e0cd;
+    //     color: var(--font-dark-grey)
+    // }
+}
+
+.footer-about{
+    width: 60%;
+    h2{
+        font-family: Alata;
+        font-size: 2rem;
+    }
+}
+

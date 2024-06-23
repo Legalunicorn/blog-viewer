@@ -8,13 +8,15 @@
     color: #777;
     border: 1px solid #777;
     background-color: white;
+    font-family: Alata;
 
     // flex: 0 0 100%;
 
     &:hover{
         color: white;
-        border: 1px solid var(--font-light-blue);
-        background-color: var(--font-light-blue);
+
+        border: 1px solid var(--color-primary);
+        background-color: var(--color-primary);
 
    
     }

@@ -47,11 +47,10 @@ export default function TagPage(){
     return (
         <div className="tag-content">
             <div className="view-setter">
-                <span onClick={()=>setView('recent')}>Recent</span>
-                <span onClick={()=>setView('top')}>Top</span>
-                
+                <span className={view=="recent" && 'selected-view'}  onClick={()=>setView('recent')}>Recent</span>
+                <span className={view=="top" && 'selected-view'}  onClick={()=>setView('top')}>Top</span>
+        
             </div>
-            
 
             {error ? 
 

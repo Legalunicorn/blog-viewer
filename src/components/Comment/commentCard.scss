@@ -1,11 +1,9 @@
 .comment-card{
     background-color: white;
-    padding: 0.3rem 1.2rem 0.8rem 0.9rem;
+    padding: 0.3rem 1.2rem 0.8rem 0.2rem;
     margin-bottom: 2rem;
-    // border-radius: 0.1rem;
-    // border-left: 3px solid #eee;
     border-bottom: 1px solid #eee;
-    // border: 3px solid red;
+    // border: 2px solid red;
 
     .comment-meta{
         display:flex;
@@ -17,14 +15,17 @@
             // height:150%;
         }
 
-        div{
-            // font-size: 0.9rem;;
-            // border: 2px solid red;
-        }
+        // div{
+        //     // font-size: 0.9rem;;
+        //     // border: 2px solid red;
+        // }
     }
     .comment-body{
         padding-left: 0.5rem;
+        margin-top: 2rem;
         white-space: pre-wrap;
+        font-family: Alata;
+        color: var(--font-grey)
     }
 
     .the-author{
