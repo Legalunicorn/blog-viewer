@@ -17,7 +17,6 @@ export default function ArticleCard({
     // }
     //truncated the text too 
 
-    //TODO print out the comment card too
     return (
         <>
         <div className="article-card">

@@ -18,7 +18,6 @@ export default function CommentCard({
     handleEdit
 }){
 
-    console.log("format",comment.body);
     const date_distance = formatDistanceToNow(comment.createdAt);
     const {user} = useAuthContext(); //get the user from auth context
     const is_author = (user && user.id===comment.author._id)? true:false;
@@ -50,7 +49,6 @@ export default function CommentCard({
     return (
         <div className="comment-card">
             <div className="comment-meta">
-                {/* //TODO bring up the is_author ternary and change the google icon color too */}
                 {is_author?
                     <span className="the-author material-symbols-outlined">person</span>
                 :
@@ -103,7 +101,3 @@ export default function CommentCard({
         </div>
     )
 }
-//TODO figure out a way to edit the comment in the card itself
-/*
-Add a use state to check if comment is being edited?
-*/

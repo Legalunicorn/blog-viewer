@@ -12,11 +12,6 @@ export default function Login(){
     const nagivate = useNavigate();
     const [error,setError] = useState() //can be either "error" or "errors"
 
-
-    const debug = ()=>{
-        console.log("clicked!")
-    }
-
     const handleSubmit = async (e)=>{
         e.preventDefault();
         //handle Form validation first before submitting
@@ -42,11 +37,14 @@ export default function Login(){
                 nagivate("/");
                 return;
             } else{ //error:"...."
+                console.log('error')
                 if (json.errors){ //from express-validator. I alrdy have FE validatio in place
-                    //this is a user sneding data to API and bypassing FE validation
+                    let combined_errors = ''
                     json.errors.forEach(err=>{
-                        console.log(err)
+                        combined_errors+='- ' +err.msg+'\n';
                     })
+                    setError(combined_errors)
+                    console.log("?")
                 }
                 if (json.error) setError(json.error)
             }

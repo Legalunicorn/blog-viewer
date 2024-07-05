@@ -12,6 +12,7 @@ import Login from "./login/Login"
 import ArticlePage from "./ArticlePage/ArticlePage.jsx"
 import Signup from "./signup/Signup.jsx";
 import TagPage from "./tagPage/TagPage.jsx";
+import Error404 from "./Error/Error404.jsx"
 
 //context
 
@@ -27,12 +28,15 @@ import {
 
 
 
-function Layout(){
+function Layout({children}){
     return (
         <>
             <Header/>
             <div id="main">
+                
+            
                 <Outlet />
+                {children}
             </div>
             
             <Footer />
@@ -49,7 +53,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/',
-                element: <Home/>,//TODO
+                element: <Home/>,
             },
             {
                 path: '/login',
@@ -70,7 +74,11 @@ const router = createBrowserRouter([
                 path:'/signup',
                 element:<Signup/>
             }
-        ]
+        ],
+        errorElement:
+        <Layout>
+            <Error404/>
+        </Layout>
     }
 ])
 

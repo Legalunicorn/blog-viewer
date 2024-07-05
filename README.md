@@ -3,24 +3,8 @@
 this project will be called Algo Rice 
 
 
-TODO
-- focus on the artistic stlying later
-- make sure the key features and components are in place
 
 
-TODO
-(high priority)
-
-- article page 
-    - handle the markdown (main body) (DONE)
-    - handle the big articeCard at the top (DONE)
-    - display comments (DONE)
-    - Like article
-
-- implement a login/signup system with LOCAL STRATEGY
-
-- Home page
-    - filter articles by recent and and top 
 
 - Profile drop down
     - change display name
@@ -29,7 +13,6 @@ TODO
 
 (low priority)
 About page
-Tags side bar
 UX, feasters
 Footer
 

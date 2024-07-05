@@ -1,6 +1,6 @@
 .article-header{
     // border: 5px solid red;
-    margin-top:2rem;
+    margin-top:1.8rem;
     margin-bottom: 3.5rem;
     display:flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     }
 
     .article-meta{
-        margin-left: 0.5rem;
+        margin-left: 0.2rem;
         display: flex;
         gap: 8px;
         margin-bottom: 0.5rem;
@@ -34,7 +34,7 @@
         }
     }
     .article-likes{
-        margin-left: 0.5rem;
+        // margin-left: 0.5rem;
         margin-bottom: 1.5rem;
         color: #707070;
         display: flex;

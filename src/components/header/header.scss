@@ -18,13 +18,13 @@
 #header{
     // color: #ffffff;
     background-color: #3e968b;
-    border-bottom: 2px solid $light-grey;
     display:flex;
     height:10vh;
     max-height: 40px;
-    margin-bottom: auto;
+    // margin-bottom: auto;
     gap:0.5rem;
     align-items: center;
+    border: 10px sold red;
     padding: 1.5rem 0 1.7rem 0;
     // padding: 1.5rem 0.8rem 2.0rem 0.;
 
@@ -41,7 +41,6 @@
         // color: red;
         filter: invert(99%) sepia(3%) saturate(813%) hue-rotate(154deg) brightness(114%) contrast(87%);
         height:2rem;
-        // border: 2px solid red;
         width:auto;
     }
 
@@ -55,20 +54,16 @@
     a{
         font-family: Alata,Inter,Arial;
         font-size: 1.2rem;
-        color: black;
-        // color: var(--font-light);
         color: #eee;
         margin: 0px 5px;
+   
 
         :visited{
             text-decoration: none;;
         }
 
-        // &:hover{
-        //     // color: #171718ee;
-        // }
-    
     }
+
     .navLinks{
         margin-right:10%;
         gap: 0.5rem;

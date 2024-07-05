@@ -7,6 +7,7 @@ export default function Footer(){
         <div className="footer">
 
             <div className="footer-about">
+                <p>contact: nyeo700@gmail.com</p>
 
                 {/* <h2>About</h2>
                 <p>This project was part of an assignment from TheOdinProject.com.

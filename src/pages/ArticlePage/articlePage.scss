@@ -4,17 +4,14 @@
 .article-view{
     display:flex;
     flex-direction: column;
-    // border: 5px solid red;
-    // width: 850px;
+    // border: 5px solid yellow;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 20vh;
 
-
-    max-width: 90vw; //BUG test shriink
+    width: 90vw; 
+    max-width: var(--max-content-width) ;
     min-height: 100vh;
-    //min-width: 400px;
-    max-width: var(--max-content-width);
     justify-content: center;
 
     //padding: 0 10%;
@@ -22,7 +19,7 @@
 
 .comment-count{
     font-family: Alata,Inter,Arial;
-    margin: 1rem 0;
+    margin: 5rem 0 1rem 0;
     padding: 0.5rem 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;

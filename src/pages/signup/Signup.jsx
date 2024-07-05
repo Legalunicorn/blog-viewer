@@ -13,7 +13,6 @@ export default function Signup(){
 
 
     const handleSubmit = async (e)=>{
-        //TODO validate the username, ONLY alphanumeric characters are allowed, along with "." and "_" 
         e.preventDefault();
         try{
             const response = await customFetch("/auth/email/signup",{
@@ -36,10 +35,12 @@ export default function Signup(){
                 localStorage.setItem('user',JSON.stringify({token:json.token,id:json.id}));
                 nagivate("/");
             }else{ 
-                if (json.errors){
+                if (json.errors){ //from express-validator. I alrdy have FE validatio in place
+                    let combined_errors = ''
                     json.errors.forEach(err=>{
-                        console.log(err);
+                        combined_errors+='- ' +err.msg+'\n';
                     })
+                    setError(combined_errors)
                 }
                 if (json.error) setError(error);
             }
@@ -59,8 +60,14 @@ export default function Signup(){
             <div className="login-form">
                 <p className="site-brand">AlgoRice</p>
                 <Form onSubmit={handleSubmit}className="email-form">
-                    <input pattern="[a-zA-Z0-9._ ]+" required minlength="2" maxlength="50" type="name" name="name" placeholder="Display name"/>
-                    <input required type="email" name="email" placeholder="Email"/>
+                    <input pattern="[a-zA-Z0-9._ ]+" required minlength="2" 
+                        maxlength="50" type="name" 
+                        name="name" placeholder="Display name"
+                        title="Only alphabets, numbers, underscore, and period are allowed"
+                        />
+                    <input required type="email" 
+                    name="email" placeholder="Email"
+                     autoComplete="off"/>
                     <input required type="password" name="password" placeholder="Password"/>
 
 

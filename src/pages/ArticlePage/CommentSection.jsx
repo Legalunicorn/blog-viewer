@@ -15,7 +15,6 @@ export default function CommentSection ({
 
     const {user} = useAuthContext();
 
-    //BUG add teh delete comment up here
 
     const handleEdit = (e) =>{
         const id = e.target.dataset.id;

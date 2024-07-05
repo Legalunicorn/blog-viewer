@@ -21,7 +21,6 @@ export default function ArticleHeader({
     // console.log("test",article)
 
     useEffect(()=>{
-        console.log("loading header: ")
         if (user){ //logged in personal. we want to check if they liked this post before
             customFetch(`/like/articles/${article._id}`,{
                 headers:{
@@ -48,12 +47,10 @@ export default function ArticleHeader({
 
 
     //parse the image
-    console.log("LOADING IMG:>.",article.image);
     console.log(JSON.stringify(article.image))
 
     const unescaped_amp = article.image;
 
-    //TODO handle the link buttom
     return (
         <div className="article-header"> 
             <p className="article-title">{article.title}</p>
@@ -97,7 +94,6 @@ export default function ArticleHeader({
     )
     
 }
-//TODO add and style the tages below "author+created date"
 
 /*
 

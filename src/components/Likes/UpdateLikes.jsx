@@ -30,7 +30,7 @@ export default function UpdateLikes({
     }
 
     //when like button is clicked
-    const handleClick = () =>{ //TODO render it in article header to put a reguar span
+    const handleClick = () =>{  
         //technically not necessary since this component shouldnt be loaded if user is not logged in
         if (!user) return;
         

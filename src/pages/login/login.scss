@@ -6,13 +6,13 @@
     align-items: center;
     width: 100%;
     min-height: 95vh;
-    background-color: #eee;
+    // background-color: #eee;
+    background-image: linear-gradient(to top, rgb(133, 255, 218), var(--color-primary));
 }
 
 .email-form{
     display: flex;
     flex-direction: column;
-    // border: 2px solid red;
     padding: 1.5rem 0;
     // border-bottom: 1px solid #c5c3c3;
 }
@@ -20,9 +20,11 @@
 .login-form{
     max-width: 600px;
     min-height: 300px;
+    border-radius: 0.5rem;
 
     background-color: white;
-    box-shadow: -4px 4px 5px #d6d2d2;
+    background-color: #eee;
+    // box-shadow: -4px 4px 5px #d6d2d2;
 
     margin-top: 5rem;
     padding: 2rem 5rem;
@@ -42,6 +44,7 @@
 .form-button{
     // height: 2rem;
     // width: fit-content;
+    
     text-align: center;
     margin-top: 1rem;
     font-size: 1rem;
@@ -51,6 +54,7 @@
     background-color: white;
     text-decoration: none;
     transition: 0.2s;
+    background-color: #eee;
 
 
 
@@ -91,12 +95,11 @@ input{
     font-family: Inter;
     font-size: 1rem;
     border: 0;
-    // border-bottom: 1px solid var(--font-dark-grey);
     border-bottom: 1px solid #eee;
     padding: 0.4rem 0.5rem 0.4rem 0;
     margin: 1.2rem 0;
-    // margin-bottom: 0.5rem;
     transition: 0.25s ease-in-out;
+    background-color: #eee;
 
     &:focus{
         outline:none;

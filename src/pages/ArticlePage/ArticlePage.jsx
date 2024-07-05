@@ -10,7 +10,7 @@ import CommentSection from "./CommentSection";
 import CreateComment from "../../components/Comment/createComment";
 
 import { customFetch } from "../../utils/customFetch";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import "./articlePage.scss"
 import BeatLoad from "../../components/Util/BeatLoad";
 
@@ -22,13 +22,15 @@ export default function ArticlePage() {
     const [article, setArticle] = useState({ article: { body: "hi" } });
     const [isLoading, setLoading] = useState(true);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
-        //TODO get the article and comments from backend api and lay them 
         customFetch(`/articles/${id}`)
             .then(res => {
                 if (res.ok) return res.json()
+                setLoading(false);
+                navigate('/')
                 throw new Error("Something went wrong.")
             })
             .then(data => {
@@ -42,7 +44,6 @@ export default function ArticlePage() {
             })
     }, [])
 
-    //TODO implementing loading thing, for now no errorr bc use state is [] not null 
     return (
         <div className="article-view">
             {isLoading &&
@@ -55,11 +56,9 @@ export default function ArticlePage() {
             {!isLoading && 
             <>
                 <ArticleHeader article={article} />
-                <div>
-                    <ArticleMarkdown
-                        article_body={article.body}
-                    />
-                </div>
+                <ArticleMarkdown
+                    article_body={article.body}
+                />
                 <h2 className="comment-count">Comments  ({comments.length})</h2>
                 <div>
                     <CreateComment 

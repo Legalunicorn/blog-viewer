@@ -41,8 +41,7 @@ export default function CreateComment({
                 body: JSON.stringify({body:e.target.comment_body.value}),
                 headers:{
                     "Content-Type":'application/JSON',
-                    //TODO make a custom customAuthFetch on the CMS client
-                    'Authorization': `Bearer ${user.token}` //BUG this should be JWT but ive changed it to be id + jwt
+                    'Authorization': `Bearer ${user.token}` 
                 }
             }).then(res=>{
                 if (res.ok) return res.json(); //Should be receiving the comment created from the DB

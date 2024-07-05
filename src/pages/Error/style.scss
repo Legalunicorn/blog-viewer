@@ -1,0 +1,33 @@
+.error-page{
+    // background-image: linear-gradient(to top, rgb(133, 255, 218), var(--color-primary));
+    background-color: #eee;
+    background-color: var(--color-primary);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // color: white;
+
+    .error-box{
+        background-color: #13695b;
+        padding: 3rem;
+        border-radius: 2rem;
+        color: white;
+        
+
+    }
+
+    h1{
+        font-family: Alata;
+
+    }
+
+
+    img{
+        filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(359deg) brightness(102%) contrast(105%);
+        max-width: 60%;
+    }
+}

@@ -5,7 +5,6 @@ import './index.scss'
 import router from "./pages/routes"
 import { RouterProvider } from 'react-router-dom'
 
-//TODO create auth context and import it here
 import { AuthContextProvider } from './context/AuthContext'
 
 
