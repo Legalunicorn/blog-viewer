@@ -1,7 +1,15 @@
 # Blog Page 
 
 Browse articles created by users from the CMS.
-Build with ReactJs, SASS, and Vite.
+
+Built with ReactJs, SASS, and Vite.
+
+## Live: [blog viewer](https://algorice-viewer.vercel.app)
+
+
+link to [blog_api repo](https://github.com/Legalunicorn/blog-api)
+
+link to [blog cms repo](https://github.com/Legalunicorn/blog-cms)
 
 ![home_preview](./public/home_preview.png)
 
