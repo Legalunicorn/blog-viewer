@@ -1,24 +1,18 @@
-# Blah blah
+# Blog Page 
 
-this project will be called Algo Rice 
+Browse articles created by users from the CMS.
+Build with ReactJs, SASS, and Vite.
 
+## Core features
+- Login/Sign up with Email or Google OAuth
+- Create comments under articles
+- Like articles
+- Sort Articles by Recent or Top
+- View all articles by a Tags
 
-
-
-
-- Profile drop down
-    - change display name
-    - login, signup
-
-
-(low priority)
-About page
-UX, feasters
-Footer
-
-
-
-UX
-- make the Likes dynamic 
-- make the "comment" dynamic (use state or something idk)
+## Dependencies
+- **react-markdown** (process text written in markdown)
+- **react-router-dom** (cient side rounting)
+- **react-syntax-highlighter** (highlight preserved words in code blocks)
+- **react-text-autosize** (resize textarea automatically as the number of rows needed increases)
 - 
