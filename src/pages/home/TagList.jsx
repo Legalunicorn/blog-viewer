@@ -5,7 +5,7 @@ export default function TagList({
     tags
 }){
     console.log(tags);
-    console.log("heheh")
+    console.log("haw?")
     return (
         <div className="tag-group">
             {tags.map(tag=>(

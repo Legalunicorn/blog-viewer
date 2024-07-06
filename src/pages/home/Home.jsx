@@ -33,6 +33,7 @@ export default function Home(){
         }
 
         const getArticles = async () =>{
+            console.log(import.meta.env.VITE_API_URL,"??")
             try {
                 const req = await fetch(
                     import.meta.env.VITE_API_URL +'/articles'
